@@ -18,10 +18,10 @@ def gen_obstacles():
     OBSTACLE_COLOR = pygame.Color("black")
     CLEARANCE_COLOR = pygame.Color("white")
 
-    # # Create the surface for the obstacle course
-    surface = pygame.Surface((WINDOW_WIDTH, WINDOW_HEIGHT))
+    # # Create the window for the obstacle course
+    window = pygame.Surface((WINDOW_WIDTH, WINDOW_HEIGHT))
     # # Fill the surface with the background color
-    surface.fill(BACKGROUND_COLOR)
+    window.fill(BACKGROUND_COLOR)
 
     # # Blit the surface onto the Pygame window
     
@@ -69,12 +69,12 @@ def gen_obstacles():
                     free_coords.append([x,y])
 
     for [x,y] in clearance_coords:
-        pygame.draw.rect(surface, CLEARANCE_COLOR, (x, y,1 ,1))
-        window.blit(surface, (0, 0))                                           #Using the coordinates to display the generated map.
+        pygame.draw.rect(window, CLEARANCE_COLOR, (x, y,1 ,1))
+        window.blit(window, (0, 0))                                           #Using the coordinates to display the generated map.
         pygame.display.update()
     for [x,y] in occupied_coords:
-        pygame.draw.rect(surface,OBSTACLE_COLOR,(x,y,1,1))
-        window.blit(surface, (0, 0))
+        pygame.draw.rect(window,OBSTACLE_COLOR,(x,y,1,1))
+        window.blit(window, (0, 0))
         pygame.display.update()
     #print(free_coords[0])
     #print(occupied_coords[0])
